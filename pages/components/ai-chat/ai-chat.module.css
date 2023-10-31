@@ -1,0 +1,77 @@
+.inputContainer {
+  position: fixed;
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.inputText {
+  flex: 1;
+  padding: 20px;
+  margin-right: 8px;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.sendButton {
+  padding: 8px 16px;
+  background-color: #0074e4;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.messageContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 4em;
+  width: 45%;
+  max-height: 72%;
+  overflow-y: auto;
+}
+
+.thinking{
+  background-color: #f0f0f0; /* Thinking message background color */
+  color: #333; /* Thinking message message text color */
+  align-self: flex-start; /* Left-align Thinking message */
+}
+
+/* mobile devices */
+@media (max-width: 700px) {
+  .inputText {
+    padding: 12px;
+  }
+  .inputContainer {
+    left: 2px;
+    width: 98%;
+  }
+  .messageContainer{
+    width: 90%;
+    max-height: 82%;
+    overflow-y: auto;
+  }
+}
+
+/* tabs and smaller desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .inputText {
+    padding: 16px;
+  }
+  .inputContainer {
+    left: 2px;
+    width: 98%;
+  }
+  .messageContainer{
+    width: 90%;
+    max-height: 82%;
+    overflow-y: auto;
+  }
+}

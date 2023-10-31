@@ -1,0 +1,27 @@
+.message {
+  max-width: 70%; /* Adjust as needed */
+  margin: 0.5rem; /* Adjust as needed */
+  padding: 0.5rem;
+  border-radius: 8px;
+  word-wrap: break-word;
+}
+
+/* Styles for user messages */
+.messageUser {
+  background-color: #007bff; /* User message background color */
+  color: white; /* User message text color */
+  align-self: flex-end; /* Right-align user messages */
+}
+
+/* Styles for bot messages */
+.messageBot {
+  background-color: #f0f0f0; /* Bot message background color */
+  color: #333; /* Bot message text color */
+  align-self: flex-start; /* Left-align bot messages */
+}
+
+.responseText {
+  max-width: 100%; /* Adjust the maximum width as needed */
+  white-space: pre-wrap; /* Allow text to wrap to the next line */
+  /* Add other styles as necessary */
+}

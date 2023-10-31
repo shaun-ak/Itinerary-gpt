@@ -1,0 +1,38 @@
+/* styles/bottomInput.module.css */
+
+.header {
+  position: fixed;
+  padding: 20px;
+  top: 1px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: white; /* Light gray background */
+  border-bottom: 1px solid #ddd;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.title {
+    font-family: 'Helvetica Neue', Tahoma,  Verdana, sans-serif;
+    font-size: x-large;
+    font-weight: 500;
+    color: rgb(12, 11, 7);
+}
+
+/* mobile devices */
+@media (max-width: 700px) {
+  .header {
+    width: 95%;
+    padding: 20px;
+  }
+}
+
+/* tabs and smaller desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .header {
+    width: 95%;
+    padding: 20px;
+  }
+}
