@@ -1,25 +1,14 @@
 /* styles/globals.css */
 
-/* Reset default margin and padding for body */
-body {
+/* Reset default stylings */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Common background styles for all screen sizes */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-color: lightgray;
-}
-
-/* Set text color to contrast with the background */
 body {
-  color: #fff; /* White text color */
-  font-family: Arial, sans-serif; /* Choose an appropriate font */
+  background: lightgray;
+  color: #fff;
+  font-family: Arial, sans-serif;
 }
