@@ -1,7 +1,7 @@
 // components/Message.tsx
 "use client";
 import styles from "./message.module.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 interface MessageProps {
   text: string;

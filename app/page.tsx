@@ -1,6 +1,6 @@
 import styles from "./page.module.css";
 import Head from "next/head";
-import AiChat from "@/pages/components/ai-chat/ai-chat";
+import AiChat from "@/components/ai-chat/ai-chat";
 
 export default function Home() {
   return (

@@ -19,13 +19,18 @@
   outline: none;
 }
 
-.sendButton {
+.sendButton, .disabledButton {
   padding: 8px 16px;
   background-color: #0074e4;
   color: #fff;
   border: none;
   border-radius: 10px;
   cursor: pointer;
+}
+
+.disabledButton {
+  background-color: #3e6f9d;
+  cursor: not-allowed;
 }
 
 .messageContainer {
