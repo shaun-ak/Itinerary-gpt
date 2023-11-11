@@ -9,7 +9,7 @@ const AiChat: React.FC = () => {
     useChat();
 
   return (
-    <>
+    <main className={styles.ai_chat_container}>
         <div className={styles.header}>
           <p className={styles.title}>ItineraryGPT</p>
         </div>
@@ -42,7 +42,7 @@ const AiChat: React.FC = () => {
             </button>
           )}
         </form>
-    </>
+    </main>
   );
 };
 
