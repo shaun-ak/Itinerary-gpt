@@ -10,32 +10,38 @@ const AiChat: React.FC = () => {
 
   return (
     <>
-      <div className={styles.messageContainer}>
-        {messages.map((message) => (
-          <Message
-            key={message.id}
-            text={message.content}
-            isUser={message.role == "user"}
+        <div className={styles.header}>
+          <p className={styles.title}>ItineraryGPT</p>
+        </div>
+        <div className={styles.messageContainer}>
+          <div className={styles.messageWrapper}>
+            {messages.map((message) => (
+              <Message
+                key={message.id}
+                text={message.content}
+                isUser={message.role == "user"}
+              />
+            ))}
+          </div>
+        </div>
+
+        <form className={styles.inputContainer} onSubmit={handleSubmit}>
+          <input
+            className={styles.inputText}
+            value={input}
+            placeholder="Your input goes here..."
+            onChange={handleInputChange}
           />
-        ))}
-      </div>
-      <form className={styles.inputContainer} onSubmit={handleSubmit}>
-        <input
-          className={styles.inputText}
-          value={input}
-          placeholder="Your input goes here..."
-          onChange={handleInputChange}
-        />
-        {!isLoading ? (
-          <button type="submit" className={styles.sendButton}>
-            Send
-          </button>
-        ) : (
-          <button className={styles.disabledButton} disabled>
-            Sending...
-          </button>
-        )}
-      </form>
+          {!isLoading ? (
+            <button type="submit" className={styles.sendButton}>
+              Send
+            </button>
+          ) : (
+            <button className={styles.disabledButton} disabled>
+              Sending...
+            </button>
+          )}
+        </form>
     </>
   );
 };

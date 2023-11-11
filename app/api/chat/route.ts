@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     
     UserInput: ${messages[messages.length - 1].content}\
     use the above UserInput to find the holiday destination and give the itinerary in the specified way mentioned above.`;
-  console.log(prompt);
+
   const response = await openai.chat.completions.create({
     messages: [{ role: "user", content: prompt }],
     model: "gpt-4",

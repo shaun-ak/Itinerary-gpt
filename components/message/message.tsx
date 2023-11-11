@@ -1,7 +1,7 @@
 // components/Message.tsx
 "use client";
 import styles from "./message.module.css";
-import React, { useState } from "react";
+import React from "react";
 
 interface MessageProps {
   text: string;
@@ -11,8 +11,6 @@ interface MessageProps {
 const Message: React.FC<MessageProps> = ({ text, isUser }) => {
   // Apply different classes based on isUser prop
   const messageClass = isUser ? "messageUser" : "messageBot";
-  const [dots, setDots] = useState("...");
-  const isThinking = text.includes("Thinking");
 
   return (
     <>
