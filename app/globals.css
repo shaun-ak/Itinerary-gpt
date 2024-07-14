@@ -1,5 +1,7 @@
 /* styles/globals.css */
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 /* Reset default stylings */
 * {
   margin: 0;
@@ -8,7 +10,7 @@
 }
 
 body {
-  background: lightgray;
-  color: #fff;
+  background: white;
   font-family: Arial, sans-serif;
+  height: 100vh;
 }
