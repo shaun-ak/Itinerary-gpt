@@ -3,6 +3,8 @@ import React from "react";
 import Message from "../message/message";
 import styles from "./ai-chat.module.scss";
 import { useChat } from "ai/react";
+import { MdArrowBack } from "react-icons/md";
+import TopNav from "../top-nav/top-nav";
 
 const AiChat: React.FC = () => {
   const { messages, input, handleInputChange, handleSubmit, isLoading } =
@@ -10,9 +12,7 @@ const AiChat: React.FC = () => {
 
   return (
     <main className={styles.ai_chat_container}>
-        <div className={styles.header}>
-          <p className={styles.title}>ItineraryGPT</p>
-        </div>
+        <TopNav/>
         <div className={styles.messageContainer}>
           <div className={styles.messageWrapper}>
             {messages.map((message) => (
