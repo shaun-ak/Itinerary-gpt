@@ -1,22 +1,13 @@
 /* styles/bottomInput.module.css */
 
 .header {
-  position: fixed;
-  padding: 20px;
-  top: 1px;
-  left: 50%;
-  width: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  background-color: white; /* Light gray background */
+  @apply max-h-16 px-5 w-1/2 m-auto flex justify-center items-center bg-white outline-none flex-1 rounded-sm;
   border-bottom: 1px solid #ddd;
-  border-radius: 2px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  outline: none;
 }
 
 .title {
+  @apply flex justify-center grow-[5];
   font-family: "Helvetica Neue", Tahoma, Verdana, sans-serif;
   font-size: x-large;
   font-weight: 500;
