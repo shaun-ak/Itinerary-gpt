@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import styles from "./button.module.scss"
 
 interface Button {
     text: string;
@@ -8,6 +9,7 @@ interface Button {
 const Button: React.FC<Button> = ({ text, onClick }) => {
     return (
         <button
+            className={`${styles.btn}`}
             type="button"
             onClick={onClick}
         >
