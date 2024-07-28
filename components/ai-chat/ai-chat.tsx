@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Message from "../message/message";
-import styles from "./ai-chat.module.css";
+import styles from "./ai-chat.module.scss";
 import { useChat } from "ai/react";
 
 const AiChat: React.FC = () => {

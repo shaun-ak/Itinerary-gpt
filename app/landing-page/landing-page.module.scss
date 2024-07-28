@@ -1,0 +1,23 @@
+.hello{
+    @apply flex flex-col justify-center mt-[15%] text-4xl text-white cursor-default;
+}
+
+.top-container{
+    @apply bg-black w-full h-2/3;
+}
+
+.gradient{
+    @apply text-indigo-400;
+}
+
+.button{
+    @apply text-red-100 text-xl flex justify-center;
+}
+
+.hola-text{
+    @apply flex justify-center gap-[10px];
+}
+
+.description{
+    @apply flex justify-center text-2xl;
+}
