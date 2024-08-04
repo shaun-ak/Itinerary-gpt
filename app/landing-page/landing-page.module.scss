@@ -1,23 +1,43 @@
-.hello{
-    @apply flex flex-col justify-center mt-[15%] text-4xl text-white cursor-default;
+.container {
+  @apply w-full h-full fixed top-0 flex flex-col gap-0;
+}
+.hello {
+  @apply flex flex-col justify-center text-4xl text-white cursor-default;
+}
+.top-container {
+  @apply bg-black w-full h-3/6 flex justify-center items-center;
 }
 
-.top-container{
-    @apply bg-black w-full h-3/6 fixed top-0;
+.gradient {
+  @apply text-indigo-400;
 }
 
-.gradient{
-    @apply text-indigo-400;
+.button {
+  @apply text-red-100 text-xl flex justify-center;
 }
 
-.button{
-    @apply text-red-100 text-xl flex justify-center;
+.hola-text {
+  @apply flex justify-center gap-[10px] text-white;
 }
 
-.hola-text{
-    @apply flex justify-center gap-[10px];
+.description {
+  @apply flex justify-center text-2xl;
 }
 
-.description{
-    @apply flex justify-center text-2xl;
+.mid-container-1{
+    @apply bg-slate-950 h-2/5;
+}
+
+/* mobile devices */
+@media (max-width: 700px) {
+  .hola-text{
+    @apply text-[1.5rem];
+  }
+}
+
+/* tabs and smaller desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .hola-text{
+    @apply text-[2.5rem];
+  }
 }

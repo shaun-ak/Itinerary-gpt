@@ -1,4 +1,4 @@
-import { Inter, Roboto_Mono, Poppins, Montserrat } from 'next/font/google'
+import { Inter, Roboto_Mono, Poppins, Montserrat, Bebas_Neue, Kalnia } from 'next/font/google'
 
 export const inter = Inter({
     subsets: ['latin'],
@@ -17,6 +17,12 @@ export const poppins = Poppins({
 })
 
 export const montserrat = Montserrat({
+    subsets: ['latin'],
+    display: 'swap',
+})
+
+export const kalnia  = Kalnia({
+    weight: "400",
     subsets: ['latin'],
     display: 'swap',
 })

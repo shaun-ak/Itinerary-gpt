@@ -1,0 +1,81 @@
+/* components/TextCarousel.module.css */
+
+.carouselContainer {
+  @apply h-full flex justify-center items-center text-center;
+}
+
+.message {
+  transition: opacity 1s;
+  opacity: 0;
+  @apply text-white absolute text-3xl;
+}
+
+.message:nth-child(1) {
+  animation: fadeInOut 20s linear;
+  animation-delay: 0s;
+}
+
+.message:nth-child(2) {
+  animation: fadeInOut 20s linear;
+  animation-delay: 5s;
+}
+
+.message:nth-child(3) {
+  animation: fadeInOut 20s linear;
+  animation-delay: 10s;
+}
+
+.message:nth-child(4) {
+  animation: lastFadeInOut 20s linear;
+  animation-delay: 15s;
+  animation-fill-mode: forwards;
+}
+
+.lastMessage{
+  opacity: 1;
+  animation: none;
+}
+
+/* mobile devices */
+@media (max-width: 700px) {
+  .message{
+    @apply text-xl;
+  }
+}
+
+/* tabs and smaller desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .message{
+    @apply text-xl;
+  }
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lastFadeInOut {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
