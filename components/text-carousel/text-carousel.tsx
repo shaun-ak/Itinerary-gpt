@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './text-carousel.module.css'
-import { kalnia } from '../../app/fonts/fonts'
+import { cormorant } from '../../app/fonts/fonts'
 
 const TextCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -37,7 +37,7 @@ const TextCarousel = () => {
       `.${styles.message}`
     )
     if (isInView) {
-      messages?.forEach(message => {
+      messages?.forEach((message, index) => {
         message.style.animationPlayState = 'running'
       })
 
@@ -55,20 +55,20 @@ const TextCarousel = () => {
   }, [isInView])
 
   return (
-    <div className={`${styles.carouselContainer} ${kalnia.className}`} ref={carouselRef}>
+    <div className={`${styles.carouselContainer} ${cormorant.className}`} ref={carouselRef}>
       <p className={`${styles.message}`}>
-        Planning to go on a holiday with your parents?
+      Ready to create unforgettable travel memories? ✨
       </p>
       <p className={`${styles.message}`}>
-        Planning a long weekend with friends?
+      Dreaming of the perfect family getaway? 🌟
       </p>
       <p className={`${styles.message}`}>
-        Planning a vacation with your partner?
+      Want to plan an amazing adventure with friends? 🌍
       </p>
       <p
         className={`${styles.message} ${hasAnimated ? styles.lastMessage : ''}`}
       >
-        Let ItineraryGPT help you in planning your Itinerary
+        Let ItineraryGPT be your personal travel planner! 🎯
       </p>
     </div>
   )
