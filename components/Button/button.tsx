@@ -9,7 +9,7 @@ interface Button {
 const Button: React.FC<Button> = ({ text, onClick }) => {
     return (
         <button
-            className={`${styles.button}`}
+            className={styles.button}
             type="button"
             onClick={onClick}
         >

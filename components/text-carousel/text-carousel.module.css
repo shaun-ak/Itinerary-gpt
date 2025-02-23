@@ -7,7 +7,7 @@
 .message {
   transition: opacity 1s;
   opacity: 0;
-  @apply text-white absolute text-3xl;
+  @apply text-white absolute text-[3rem];
 }
 
 .message:nth-child(1) {
@@ -39,14 +39,14 @@
 /* mobile devices */
 @media (max-width: 700px) {
   .message{
-    @apply text-xl;
+    @apply text-2xl;
   }
 }
 
 /* tabs and smaller desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .message{
-    @apply text-xl;
+    @apply text-2xl;
   }
 }
 
@@ -81,8 +81,5 @@
 }
 
 .carousel {
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    margin: 20px 0;
+  @apply text-[24px] text-center mt-[20px] mb-[20px];
 }
