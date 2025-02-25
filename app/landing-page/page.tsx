@@ -120,7 +120,7 @@ const LandingPage: React.FC = () => {
           <div className={`${styles.aboutContent}`}>
             <p>
               ItineraryGPT combines the power of artificial intelligence with travel expertise to create 
-              personalized travel plans in seconds. Whether you're planning a weekend getaway or a month-long 
+              personalized travel plans in seconds. Whether you&apos;re planning a weekend getaway or a month-long 
               adventure, our AI assistant helps you make the most of your journey.
             </p>
             <p>
