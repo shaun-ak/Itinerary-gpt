@@ -70,18 +70,18 @@ const TextCarousel = () => {
       <FaMapPin className={`${styles.icon} ${styles.destinationIcon}`} />
       
       <p className={`${styles.message}`}>
-        Ready to create unforgettable travel memories? ✨
+        <span className={styles.highlight}>Discover</span> hidden gems and local favorites in any destination ✨
       </p>
       <p className={`${styles.message}`}>
-        Dreaming of the perfect family getaway? 🌟
+        <span className={styles.highlight}>Create</span> personalized itineraries tailored to your interests 🌟
       </p>
       <p className={`${styles.message}`}>
-        Want to plan an amazing adventure with friends? 🌍
+        <span className={styles.highlight}>Experience</span> stress-free travel planning for solo trips or group adventures 🌍
       </p>
       <p
         className={`${styles.message} ${hasAnimated ? styles.lastMessage : ''}`}
       >
-        Let ItineraryGPT be your personal travel planner! 🎯
+        Your <span className={styles.highlight}>perfect journey</span> is just a conversation away! 🎯
       </p>
     </div>
   )
