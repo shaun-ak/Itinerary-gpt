@@ -127,8 +127,5 @@
 }
 
 .carousel {
-    font-size: 24px;
-    color: #333;
-    text-align: center;
-    margin: 20px 0;
+  @apply text-[24px] text-center mt-[20px] mb-[20px];
 }
