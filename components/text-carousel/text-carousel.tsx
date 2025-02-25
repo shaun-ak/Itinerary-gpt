@@ -2,7 +2,8 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import styles from './text-carousel.module.css'
-import { cormorant } from '../../app/fonts/fonts'
+import { montserrat } from '../../app/fonts/fonts'
+import { FaPlaneDeparture, FaMapMarkedAlt, FaMapPin } from 'react-icons/fa'
 
 const TextCarousel = () => {
   const carouselRef = useRef<HTMLDivElement>(null)
@@ -12,7 +13,7 @@ const TextCarousel = () => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !hasAnimated) {
+        if (entry.isIntersecting) {
           setIsInView(true)
         } else {
           setIsInView(false)
@@ -30,7 +31,7 @@ const TextCarousel = () => {
         observer.unobserve(carouselRef.current)
       }
     }
-  }, [hasAnimated])
+  }, [])
 
   useEffect(() => {
     const messages = carouselRef.current?.querySelectorAll<HTMLElement>(
@@ -41,11 +42,15 @@ const TextCarousel = () => {
         message.style.animationPlayState = 'running'
       })
 
+      // Only set hasAnimated when the last message animation ends
       const lastMessage = messages
         ? messages[messages?.length - 1]
-        : new HTMLElement()
-      lastMessage.onanimationend = () => {
-        setHasAnimated(true)
+        : null
+        
+      if (lastMessage) {
+        lastMessage.addEventListener('animationend', () => {
+          setHasAnimated(true)
+        }, { once: true })
       }
     } else {
       messages?.forEach(message => {
@@ -54,16 +59,24 @@ const TextCarousel = () => {
     }
   }, [isInView])
 
+  // We're removing the reset animations functionality
+  // to keep the last message visible permanently
+
   return (
-    <div className={`${styles.carouselContainer} ${cormorant.className}`} ref={carouselRef}>
+    <div className={`${styles.carouselContainer} ${montserrat.className}`} ref={carouselRef}>
+      {/* Icons */}
+      <FaPlaneDeparture className={`${styles.icon} ${styles.planeIcon}`} />
+      <FaMapMarkedAlt className={`${styles.icon} ${styles.mapIcon}`} />
+      <FaMapPin className={`${styles.icon} ${styles.destinationIcon}`} />
+      
       <p className={`${styles.message}`}>
-      Ready to create unforgettable travel memories? ✨
+        Ready to create unforgettable travel memories? ✨
       </p>
       <p className={`${styles.message}`}>
-      Dreaming of the perfect family getaway? 🌟
+        Dreaming of the perfect family getaway? 🌟
       </p>
       <p className={`${styles.message}`}>
-      Want to plan an amazing adventure with friends? 🌍
+        Want to plan an amazing adventure with friends? 🌍
       </p>
       <p
         className={`${styles.message} ${hasAnimated ? styles.lastMessage : ''}`}

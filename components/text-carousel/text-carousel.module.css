@@ -1,52 +1,101 @@
 /* components/TextCarousel.module.css */
 
 .carouselContainer {
-  @apply h-full flex justify-center items-center text-center;
+  @apply h-full flex justify-center items-center text-center relative;
 }
 
 .message {
   transition: opacity 1s;
   opacity: 0;
-  @apply text-white absolute text-3xl;
+  @apply text-white absolute text-[2.5rem];
 }
 
-.message:nth-child(1) {
+.message:nth-child(4) {
   animation: fadeInOut 20s linear;
   animation-delay: 0s;
 }
 
-.message:nth-child(2) {
+.message:nth-child(5) {
   animation: fadeInOut 20s linear;
   animation-delay: 5s;
 }
 
-.message:nth-child(3) {
+.message:nth-child(6) {
   animation: fadeInOut 20s linear;
   animation-delay: 10s;
 }
 
-.message:nth-child(4) {
-  animation: lastFadeInOut 20s linear;
+.message:nth-child(7) {
+  animation: lastFadeIn 20s linear;
   animation-delay: 15s;
   animation-fill-mode: forwards;
 }
 
-.lastMessage{
+/* Override animations for the last message when it has completed */
+.lastMessage {
   opacity: 1;
   animation: none;
+}
+
+/* Icon styles */
+.icon {
+  @apply absolute text-indigo-400 opacity-70;
+  animation: float 3s ease-in-out infinite;
+}
+
+.planeIcon {
+  @apply top-[10%] right-[15%] text-4xl;
+  animation-delay: 0s;
+}
+
+.mapIcon {
+  @apply bottom-[15%] left-[20%] text-4xl;
+  animation-delay: 1s;
+}
+
+.destinationIcon {
+  @apply top-[20%] left-[15%] text-4xl;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
 }
 
 /* mobile devices */
 @media (max-width: 700px) {
   .message{
-    @apply text-xl;
+    @apply text-2xl;
+  }
+  .icon {
+    @apply text-2xl;
+  }
+  .planeIcon {
+    @apply right-[10%];
+  }
+  .mapIcon {
+    @apply left-[10%];
+  }
+  .destinationIcon {
+    @apply left-[10%];
   }
 }
 
 /* tabs and smaller desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
   .message{
-    @apply text-xl;
+    @apply text-2xl;
+  }
+  .icon {
+    @apply text-3xl;
   }
 }
 
@@ -65,14 +114,11 @@
   }
 }
 
-@keyframes lastFadeInOut {
+@keyframes lastFadeIn {
   0% {
     opacity: 0;
   }
   20% {
-    opacity: 1;
-  }
-  35% {
     opacity: 1;
   }
   100% {
