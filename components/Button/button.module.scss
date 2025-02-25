@@ -1,11 +1,35 @@
 .button {
-    @apply bg-indigo-600 text-white px-4 py-2 rounded-3xl p-2;
-    transition: background-color 0.3s ease;
-    transform: scale(1);
-    transition: transform 0.3s ease;
+    @apply bg-indigo-600 text-white px-6 py-3 rounded-3xl font-medium text-lg shadow-lg relative overflow-hidden transition-all duration-300 ease-in-out;
+}
 
-    &:hover {
-        background-color: #0056b3;
-        transform: scale(0.9);
+.buttonHover {
+    @apply bg-indigo-700 -translate-y-1 shadow-xl shadow-indigo-500/30;
+}
+
+.buttonActive {
+    @apply translate-y-0 shadow-md shadow-indigo-500/20;
+}
+
+.shimmer {
+    @apply absolute top-0 left-[-100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent;
+}
+
+.shimmerAnimate {
+    @apply left-[100%];
+}
+
+.pulseAnimation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(79, 70, 229, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
     }
 }
