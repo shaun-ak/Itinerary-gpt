@@ -1,0 +1,360 @@
+.chatbotContainer {
+  @apply w-full h-screen flex bg-gray-900;
+}
+
+/* Sidebar styles */
+.sidebar {
+  @apply w-64 h-full bg-gray-800 flex flex-col border-r border-gray-700;
+}
+
+.logo {
+  @apply text-2xl font-bold text-white p-6 border-b border-gray-700;
+}
+
+.gradient {
+  @apply text-indigo-400;
+}
+
+.nav {
+  @apply flex-grow p-4;
+}
+
+.navButton {
+  @apply w-full flex items-center text-gray-300 p-3 rounded-lg mb-2 transition-colors;
+  
+  &:hover {
+    @apply bg-gray-700 text-white;
+  }
+  
+  &.active {
+    @apply bg-indigo-600 text-white;
+  }
+  
+  svg {
+    @apply mr-3 text-lg;
+  }
+}
+
+.sidebarFooter {
+  @apply p-4 border-t border-gray-700;
+}
+
+.backLink {
+  @apply flex items-center text-gray-400 p-2 rounded-lg transition-colors;
+  
+  &:hover {
+    @apply text-white;
+  }
+  
+  svg {
+    @apply mr-3;
+  }
+}
+
+/* Main content styles */
+.mainContent {
+  @apply flex-grow flex flex-col h-full;
+}
+
+.chatHeader {
+  @apply p-6 border-b border-gray-700 bg-gray-800 flex justify-between items-center;
+  
+  h1 {
+    @apply text-xl font-semibold text-white;
+  }
+  
+  p {
+    @apply text-sm text-gray-400 mt-1;
+  }
+}
+
+.messagesContainer {
+  @apply flex-grow p-4 overflow-y-auto space-y-3;
+  background: linear-gradient(to bottom, #1a202c, #2d3748);
+}
+
+.message {
+  @apply flex items-start max-w-3xl;
+  
+  &.userMessage {
+    @apply ml-auto;
+    flex-direction: row-reverse;
+    
+    .messageIcon {
+      @apply bg-indigo-600 ml-2 mr-0;
+    }
+    
+    .messageContent {
+      @apply items-end;
+    }
+    
+    .messageText {
+      @apply bg-indigo-600 text-white rounded-tl-2xl rounded-tr-none;
+    }
+  }
+  
+  &.botMessage {
+    .messageIcon {
+      @apply bg-gray-700 mr-2;
+    }
+    
+    .messageText {
+      @apply bg-gray-700 text-white rounded-tr-2xl rounded-tl-none;
+    }
+  }
+}
+
+.messageIcon {
+  @apply w-10 h-10 rounded-full flex items-center justify-center text-white flex-shrink-0;
+}
+
+.messageContent {
+  @apply flex flex-col;
+}
+
+.messageText {
+  @apply p-3 rounded-b-2xl max-w-lg whitespace-pre-wrap;
+  
+  // Improve readability for long messages
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+.messageTime {
+  @apply text-xs text-gray-500 mt-1;
+}
+
+.typingIndicator {
+  @apply flex items-center justify-center space-x-1 py-2 px-4;
+  
+  span {
+    @apply w-2 h-2 bg-gray-400 rounded-full;
+    animation: bounce 1.4s infinite ease-in-out both;
+    
+    &:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+    
+    &:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+  }
+}
+
+.inputContainer {
+  @apply p-4 border-t border-gray-700 bg-gray-800 flex items-end;
+}
+
+.inputField {
+  @apply flex-grow bg-gray-700 text-white rounded-l-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-500;
+  max-height: 120px;
+}
+
+.sendButton {
+  @apply bg-indigo-600 text-white p-3 rounded-r-lg transition-colors;
+  
+  &:hover {
+    @apply bg-indigo-700;
+  }
+  
+  &:disabled {
+    @apply bg-gray-600 cursor-not-allowed;
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { 
+    transform: scale(0);
+  }
+  40% { 
+    transform: scale(1.0);
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .chatbotContainer {
+    @apply flex-col;
+  }
+  
+  .sidebar {
+    @apply w-full h-auto;
+  }
+  
+  .nav {
+    @apply flex flex-row justify-around p-2;
+  }
+  
+  .navButton {
+    @apply mb-0 justify-center;
+    
+    span {
+      @apply hidden;
+    }
+    
+    svg {
+      @apply mr-0;
+    }
+  }
+  
+  .sidebarFooter {
+    @apply hidden;
+  }
+  
+  .logo {
+    @apply text-xl p-4 text-center;
+  }
+}
+
+.botMessageText {
+  @apply text-white;
+  
+  /* Only style Day headings prominently */
+  h2 {
+    @apply text-xl font-bold text-indigo-300 mt-3 mb-2 border-b border-indigo-700 pb-1;
+  }
+  
+  /* No special styling for any other elements */
+  h3, h4, h5, h6, strong, em, a {
+    @apply text-white font-normal;
+  }
+  
+  /* Basic paragraph styling */
+  p {
+    @apply my-1;
+    line-height: 1.4;
+  }
+  
+  /* Basic list styling */
+  ul, ol {
+    @apply pl-4 my-1;
+  }
+  
+  li {
+    @apply py-0.5;
+  }
+  
+  /* Simple link styling */
+  a {
+    @apply underline;
+  }
+  
+  /* Simple blockquote */
+  blockquote {
+    @apply border-l-2 border-gray-600 pl-2 italic my-1;
+  }
+  
+  /* Simple code blocks */
+  code {
+    @apply bg-gray-800 px-1 rounded;
+  }
+  
+  pre {
+    @apply bg-gray-800 p-2 rounded my-1;
+  }
+}
+
+/* Explore tab styles */
+.exploreContainer {
+  @apply flex-grow flex flex-col h-full overflow-y-auto;
+}
+
+.exploreHeader {
+  @apply p-6 border-b border-gray-700 bg-gray-800;
+  
+  h1 {
+    @apply text-xl font-semibold text-white;
+  }
+  
+  p {
+    @apply text-sm text-gray-400 mt-1;
+  }
+}
+
+.exploreGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6;
+  background: linear-gradient(to bottom, #1a202c, #2d3748);
+}
+
+.exploreCard {
+  @apply bg-gray-800 rounded-xl p-6 flex flex-col items-center text-center transition-all duration-300 cursor-pointer;
+  
+  &:hover {
+    @apply bg-gray-700 transform -translate-y-1 shadow-lg;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  h3 {
+    @apply text-lg font-semibold text-white mt-4 mb-2;
+  }
+  
+  p {
+    @apply text-gray-400 text-sm;
+  }
+}
+
+.exploreCardIconContainer {
+  @apply w-16 h-16 rounded-full bg-indigo-900 flex items-center justify-center mb-2;
+}
+
+.exploreCardIcon {
+  @apply text-indigo-300 text-2xl;
+}
+
+.clearChatButton {
+  @apply text-gray-400 hover:text-white p-2 rounded-full transition-colors bg-gray-700 hover:bg-gray-600;
+  
+  &:hover {
+    @apply transform scale-105;
+  }
+  
+  svg {
+    @apply text-base;
+  }
+}
+
+/* Modal popup for clear confirmation */
+.modalOverlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50;
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  @apply bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4 shadow-xl transform transition-all;
+  animation: modalAppear 0.2s ease-out;
+}
+
+.modalHeader {
+  @apply text-xl font-semibold text-white mb-4 pb-2 border-b border-gray-700;
+}
+
+.modalBody {
+  @apply text-gray-300 mb-6;
+}
+
+.modalButtons {
+  @apply flex justify-end space-x-4;
+  
+  button {
+    @apply px-4 py-2 rounded-lg transition-colors;
+    
+    &.confirmButton {
+      @apply bg-red-600 text-white hover:bg-red-700;
+    }
+    
+    &.cancelButton {
+      @apply bg-gray-600 text-white hover:bg-gray-500;
+    }
+  }
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+} 
