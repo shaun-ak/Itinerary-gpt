@@ -166,7 +166,7 @@ const ChatBot: React.FC = () => {
     // }, 100);
   };
   
-  return (
+    return (
     <div className={`${styles.chatbotContainer} ${poppins.className}`}>
       {/* Modal popup for clear confirmation */}
       {showClearConfirm && (
