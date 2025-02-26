@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown'
 type Message = {
   id: string
   content: string
-  sender: string
+  sender: 'user' | 'bot'
   timestamp: Date
 }
 
@@ -39,7 +39,7 @@ const ChatBot: React.FC = () => {
   // Update our messages when AI messages change
   useEffect(() => {
     if (aiMessages.length > 0) {
-      const formattedMessages = aiMessages.map(msg => ({
+      const formattedMessages: Message[] = aiMessages.map(msg => ({
         id: msg.id,
         content: msg.content,
         sender: msg.role === 'user' ? 'user' : 'bot',
