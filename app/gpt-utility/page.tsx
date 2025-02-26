@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef, useEffect, FormEvent } from 'react'
 import styles from './chatbot.module.scss'
 import { poppins, montserrat } from '../fonts/fonts'
 import { FaPaperPlane, FaRobot, FaUser, FaMapMarkedAlt, FaInfoCircle, FaGlobeAmericas, FaUmbrellaBeach, FaMountain, FaCity, FaUtensils, FaTrash } from 'react-icons/fa'
@@ -10,7 +10,7 @@ import ReactMarkdown from 'react-markdown'
 type Message = {
   id: string
   content: string
-  sender: 'user' | 'bot'
+  sender: string
   timestamp: Date
 }
 
@@ -71,7 +71,7 @@ const ChatBot: React.FC = () => {
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
-      handleSubmit(e as unknown as React.FormEvent)
+      handleSubmit(e as unknown as FormEvent<HTMLFormElement>)
     }
   }
   
