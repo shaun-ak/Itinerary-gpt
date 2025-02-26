@@ -42,7 +42,7 @@ const ChatBot: React.FC = () => {
       const formattedMessages: Message[] = aiMessages.map(msg => ({
         id: msg.id,
         content: msg.content,
-        sender: msg.role === 'user' ? 'user' : 'bot',
+        sender: msg.role === 'user' ? 'user' : 'bot' as const,
         timestamp: new Date()
       }))
       
@@ -51,7 +51,7 @@ const ChatBot: React.FC = () => {
         {
           id: '1',
           content: 'Hello! I\'m your AI travel assistant. Where would you like to go?',
-          sender: 'bot',
+          sender: 'bot' as const,
           timestamp: new Date()
         },
         ...formattedMessages
@@ -89,7 +89,7 @@ const ChatBot: React.FC = () => {
       {
         id: '1',
         content: 'Hello! I\'m your AI travel assistant. Where would you like to go?',
-        sender: 'bot',
+        sender: 'bot' as const,
         timestamp: new Date()
       }
     ])
